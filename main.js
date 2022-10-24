@@ -14,6 +14,10 @@ btn.addEventListener("click", (e) => {
         for (let i = 0; i < passwordLenght; i++){
             const index = Math.floor(Math.random() * chars.length)
             code += chars[index]
+            if (passwordLenght < 8 || passwordLenght > 25){
+                code = ""
+                span.innerHTML = ""
+            }
         }
         const div = document.createElement("div")
         div.innerHTML = code
